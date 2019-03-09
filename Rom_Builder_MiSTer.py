@@ -67,7 +67,7 @@ def parser_rom_ini(text, html_url=None):
     zip_filename = None
     options = {}
     for line in text.split('\n'):
-        if line.strip():
+        if line.strip() and not line.strip().startswith('#'):
             key, val = line.split('=')
             if key.strip() == "zip":
                 zip_filename = val.strip()
